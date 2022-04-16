@@ -7,11 +7,11 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET'])
 def index():
-    jsonify({'message': 'Welcome to Automating-Home'})
+    return jsonify({'message': 'Welcome to Automating-Home'})
 
 @app.route('/users', methods=['GET'])
 def users():
-    jsonify({'User': 'These are the users registered in this house'})
+    return jsonify({'User': 'These are the users registered in this house'})
 
 
 
