@@ -1,7 +1,8 @@
 from flask import Flask, jsonify
-
+from flask_ngrok import run_with_ngrok
 
 app = Flask(__name__)
+run_with_ngrok(app)
 
 
 
@@ -16,4 +17,5 @@ def users():
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', debug=True)
+    # app.run(host='0.0.0.0', debug=True)
+    app.run()
