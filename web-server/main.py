@@ -1,13 +1,13 @@
 from flask import Flask, jsonify
-
+from flask_ngrok import run_with_ngrok
 
 app = Flask(__name__)
-
+run_with_ngrok(app) # start with ngrok
 
 
 @app.route('/', methods=['GET'])
 def index():
-    return jsonify({'message': 'Welcome to Automating-Home'})
+    return jsonify({'message': 'Welcome to Automating-Home', 'Control':'Raspberry'})
 
 @app.route('/users', methods=['GET'])
 def users():
@@ -16,4 +16,4 @@ def users():
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', debug=True)
+    app.run()
